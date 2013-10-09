@@ -280,6 +280,9 @@
 		BE9E55AA17FFF22E003911A8 /* libwebsockets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9E55A917FFF22E003911A8 /* libwebsockets.a */; };
 		BE9E55B017FFF22E003911A8 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE9E55AF17FFF22E003911A8 /* AppDelegate.cpp */; };
 		BE9E55B317FFF22E003911A8 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE9E55B217FFF22E003911A8 /* HelloWorldScene.cpp */; };
+		BE9E55BB17FFF2A5003911A8 /* SimpleTextureShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE9E55BA17FFF2A5003911A8 /* SimpleTextureShader.cpp */; };
+		BE9E55C4180040C3003911A8 /* textureShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = BE9E55C3180040C3003911A8 /* textureShader.fsh */; };
+		BE9E55C618004116003911A8 /* textureShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = BE9E55C518004116003911A8 /* textureShader.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -873,6 +876,10 @@
 		BE9E55AF17FFF22E003911A8 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		BE9E55B117FFF22E003911A8 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		BE9E55B217FFF22E003911A8 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		BE9E55B917FFF2A5003911A8 /* SimpleTextureShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTextureShader.h; sourceTree = "<group>"; };
+		BE9E55BA17FFF2A5003911A8 /* SimpleTextureShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleTextureShader.cpp; sourceTree = "<group>"; };
+		BE9E55C3180040C3003911A8 /* textureShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textureShader.fsh; sourceTree = "<group>"; };
+		BE9E55C518004116003911A8 /* textureShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textureShader.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2097,6 +2104,10 @@
 				BE9E55AF17FFF22E003911A8 /* AppDelegate.cpp */,
 				BE9E55B117FFF22E003911A8 /* HelloWorldScene.h */,
 				BE9E55B217FFF22E003911A8 /* HelloWorldScene.cpp */,
+				BE9E55B917FFF2A5003911A8 /* SimpleTextureShader.h */,
+				BE9E55BA17FFF2A5003911A8 /* SimpleTextureShader.cpp */,
+				BE9E55C518004116003911A8 /* textureShader.vsh */,
+				BE9E55C3180040C3003911A8 /* textureShader.fsh */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2164,6 +2175,8 @@
 				BE9E523317FFF225003911A8 /* iTunesArtwork in Resources */,
 				BE9E52D217FFF227003911A8 /* ChangeLog in Resources */,
 				BE9E544617FFF22B003911A8 /* project.pbxproj in Resources */,
+				BE9E55C4180040C3003911A8 /* textureShader.fsh in Resources */,
+				BE9E55C618004116003911A8 /* textureShader.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2423,6 +2436,7 @@
 				BE9E55A217FFF22E003911A8 /* cpVect.c in Sources */,
 				BE9E55B017FFF22E003911A8 /* AppDelegate.cpp in Sources */,
 				BE9E55B317FFF22E003911A8 /* HelloWorldScene.cpp in Sources */,
+				BE9E55BB17FFF2A5003911A8 /* SimpleTextureShader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE847B2B180AA1A000E34E5B /* wolf.png in Resources */ = {isa = PBXBuildFile; fileRef = BE847B2A180AA1A000E34E5B /* wolf.png */; };
+		BE86A7881807274A005DCA66 /* findBlackPixel.png in Resources */ = {isa = PBXBuildFile; fileRef = BE86A7871807274A005DCA66 /* findBlackPixel.png */; };
 		BE9E520D17FFF225003911A8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9E520C17FFF225003911A8 /* QuartzCore.framework */; };
 		BE9E520F17FFF225003911A8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9E520E17FFF225003911A8 /* OpenGLES.framework */; };
 		BE9E521117FFF225003911A8 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9E521017FFF225003911A8 /* OpenAL.framework */; };
@@ -286,6 +288,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE847B2A180AA1A000E34E5B /* wolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wolf.png; sourceTree = "<group>"; };
+		BE86A7871807274A005DCA66 /* findBlackPixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = findBlackPixel.png; sourceTree = "<group>"; };
 		BE9E520917FFF225003911A8 /* Cocos2d-x texture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cocos2d-x texture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9E520C17FFF225003911A8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BE9E520E17FFF225003911A8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -951,6 +955,8 @@
 		BE9E521D17FFF225003911A8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE847B2A180AA1A000E34E5B /* wolf.png */,
+				BE86A7871807274A005DCA66 /* findBlackPixel.png */,
 				BE9E521E17FFF225003911A8 /* CloseNormal.png */,
 				BE9E522017FFF225003911A8 /* CloseSelected.png */,
 				BE9E522217FFF225003911A8 /* Default.png */,
@@ -2177,6 +2183,8 @@
 				BE9E544617FFF22B003911A8 /* project.pbxproj in Resources */,
 				BE9E55C4180040C3003911A8 /* textureShader.fsh in Resources */,
 				BE9E55C618004116003911A8 /* textureShader.vsh in Resources */,
+				BE86A7881807274A005DCA66 /* findBlackPixel.png in Resources */,
+				BE847B2B180AA1A000E34E5B /* wolf.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2578,6 +2586,7 @@
 				BE9E55B817FFF22E003911A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

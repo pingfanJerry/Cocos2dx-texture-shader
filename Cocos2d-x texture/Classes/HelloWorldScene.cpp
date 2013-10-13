@@ -64,17 +64,18 @@ bool HelloWorld::init()
     this->addChild(pLabel, 1);
 
     // add "HelloWorld" splash screen"
-    CCSprite* pSprite = CCSprite::create("HelloWorld.png");
+    //CCSprite* pSprite = CCSprite::create("HelloWorld.png");
 
     // position the sprite on the center of the screen
-    pSprite->setPosition( ccp(size.width/2, size.height/2) );
+    //pSprite->setPosition( ccp(size.width/2, size.height/2) );
 
     // add the sprite as a child to this layer
-    this->addChild(pSprite, 0);
+    //this->addChild(pSprite, 0);
     
+    // wolf image with costum texture shader 
     SimpleTextureShader* sh = new SimpleTextureShader;
     sh->init();
-    sh->setPosition(ccp(size.width * 0.5f, size.height * 0.5f));
+    sh->setPosition(ccp(size.width * 0.0f, size.height * 0.0f));
     addChild(sh);
     
     return true;

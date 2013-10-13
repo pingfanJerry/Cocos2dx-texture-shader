@@ -17,22 +17,19 @@ SimpleTextureShader::~SimpleTextureShader() {
 bool SimpleTextureShader::init() {
     if ( !CCNode::init() )
         return false;
-    
-    //texture = (CCSprite::create("Icon.png"))->getTexture();
-    texture = CCTextureCache::sharedTextureCache()->addImage("Icon.png");
-    
-    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+        
+    texture = CCTextureCache::sharedTextureCache()->addImage("wolf.png");
+        
+    CCSize texSize = texture->getContentSizeInPixels();
     
     ccV3F_C4B_T2F_Quad quad_tmp = {
 //                   Position                                      Color                        Texture coord.
-        { { 0.0f,             winSize.height,   0.0f },           {255, 255, 255, 255},          {0.0f, 1.0f} },
-        { { 0.0f,             0.0f,             0.0f },           {255, 255, 255, 255},          {0.0f, 0.0f} },
-        { { winSize.width,    winSize.height,   0.0f },           {255, 255, 255, 255},          {1.0f, 1.0f} },
-        { { winSize.width,    0.0f,             0.0f },           {0, 0, 255, 255},          {1.0f, 0.0f} }
+        { { 0.0f,             texSize.height,   0.0f },           {255, 255, 255, 255},          {1.0f, 0.0f} },
+        { { 0.0f,             0.0f,             0.0f },           {255, 255, 255, 255},          {1.0f, 1.0f} },
+        { { texSize.width,    texSize.height,   0.0f },           {255, 255, 255, 255},          {0.0f, 0.0f} },
+        { { texSize.width,    0.0f,             0.0f },           {255, 255, 255, 255},          {0.0f, 1.0f} }
     };    
     quad = quad_tmp;
-    
-    //setContentSize(CCSizeMake(winSize.width * 0.5f, winSize.height * 0.5f));
 
     shaderProg = new CCGLProgram;
     shaderProg->initWithVertexShaderFilename("textureShader.vsh", "textureShader.fsh");
@@ -55,50 +52,11 @@ bool SimpleTextureShader::init() {
     shaderProg->setUniformsForBuiltins();
         
     return true;
-    
-    /*
-    if ( !CCNode::init() )
-        return false;
-    
-    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-    
-    Quad quad_tmp = {
-        //                   Position                                      Color
-        { { 0.0f,             winSize.height },           {255, 255,   255,   255} },
-        { { 0.0f,             0.0f           },           {255,   255, 255,   255} },
-        { { winSize.width,    winSize.height },           {255,   255,   255, 255} },
-        { { winSize.width,    0.0f           },           {255, 255, 255, 255} }
-    };
-    quad = quad_tmp;
-    
-    setContentSize(CCSizeMake(winSize.width, winSize.height));
-    
-    CCGLProgram *shaderProg = new CCGLProgram;
-    shaderProg->initWithVertexShaderFilename("textureShader.vsh", "textureShader.fsh");
-    setShaderProgram( shaderProg );
-    
-    CHECK_GL_ERROR_DEBUG();
-    
-    shaderProg->link();
-    shaderProg->addAttribute(kCCAttributeNamePosition, kCCVertexAttrib_Position);
-    shaderProg->addAttribute(kCCAttributeNameColor, kCCVertexAttrib_Color);
-    
-    CHECK_GL_ERROR_DEBUG();
-    
-    shaderProg->updateUniforms();
-    
-    CHECK_GL_ERROR_DEBUG();
-    
-    shaderProg->setUniformsForBuiltins();
-    
-    return true;
-*/
 }
 
 void SimpleTextureShader::draw() {
     glEnable(GL_CULL_FACE);
-    shaderProg->use();
-    shaderProg->updateUniforms();
+    shaderProg->use();    
     shaderProg->setUniformsForBuiltins();
     
     
@@ -107,10 +65,7 @@ void SimpleTextureShader::draw() {
     int vertSize = sizeof(quad.bl);
     long offset = (long)&quad;
     
-    //ccGLBindTexture2D( texture->getName() );
-    
-    //ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position | kCCVertexAttribFlag_Color );
-    //glEnableVertexAttribArray(2);
+    ccGLBindTexture2D( texture->getName() );
     
     int diff = offsetof( ccV3F_C4B_T2F, vertices);
     glVertexAttribPointer(kCCVertexAttrib_Position, 3, GL_FLOAT, GL_FALSE, vertSize, (GLvoid*) (offset + diff));
@@ -125,27 +80,4 @@ void SimpleTextureShader::draw() {
     
     glDisable(GL_CULL_FACE);
         
-    
-    
-    /*glEnable(GL_CULL_FACE);
-    getShaderProgram()->use();
-    getShaderProgram()->setUniformsForBuiltins();
-    
-    CCPoint p = getPosition();
-    CCSize s = getContentSize();
-    
-    int vertSize = sizeof(quad.tl); // ccVertex2F & ccVertex4B
-    long offset = (long)&quad;
-    
-    ccGLEnableVertexAttribs(kCCVertexAttribFlag_Position | kCCVertexAttribFlag_Color);
-    //  glEnableVertexAttribArray(kCCVertexAttribFlag_Position);
-    //  glEnableVertexAttribArray(kCCVertexAttribFlag_Color);
-    
-    glVertexAttribPointer(kCCVertexAttrib_Position, 2, GL_FLOAT, GL_FALSE, vertSize, (GLvoid*) (offset));
-    glVertexAttribPointer(kCCVertexAttrib_Color, 4, GL_UNSIGNED_BYTE, GL_TRUE, vertSize, (GLvoid*) (offset + sizeof(_ccVertex2F)));
-    
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    glDisable(GL_CULL_FACE);
-    */
-    
 }
